@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <file>"
+  exit 1
+fi
+
+awk '{printf "%s", substr($0, 1, 1)} END{print ""}' "$1
